@@ -1,0 +1,21 @@
+<div *ngIf="ratesAvailable">
+<h1 class="mortgageRateHeader text-center">ING Mortgage Rates</h1>
+<div class="table-responsive">          
+  <table class="table table-striped text-center">
+    <thead class="thead-blue">
+
+      <tr>
+        <th *ngFor="let rateColumn of mortgageRatesHeader" scope="col">{{rateColumn}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let rate of mortgageRates">
+        <th scope="row">{{rate.description}}</th>
+        <td>{{rate.fixedInterestRatePeriod}}</td>
+        <td>{{rate.interestRate}}</td>
+        <td>{{rate.lastUpdate | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
